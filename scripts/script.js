@@ -134,71 +134,89 @@ function check(elem){
 	}
 }
 
+function selectNewPhotos(elem) {
+	for(var i = 0; i < elem.files.length; i++){
+		switch(elem.parentNode.className){
+			case "mainFlash":
+				miniFlash.push(elem.files[i].name);
+				break;
+			case "mainMicro":
+				miniMicro.push(elem.files[i].name);
+				break;
+			case "mainHard":
+				miniHard.push(elem.files[i].name);
+				break;
+			case "mainCloud":
+				miniCloud.push(elem.files[i].name);
+				break;
+			case "mainInternet":
+				miniInternet.push(elem.files[i].name);
+				break;
+		}
+	}
+	load(elem.parentNode.getElementsByClassName('button')[2], elem.files.length);
+}
+
+
 /*Имена временных фотографий, а точнее их миниатюр. Их размеры после нижнего подчёркивания используются далее для их отображения.
 Костыль, конечно, но в моём случае это работало и большего не требовалось, чтобы как-то заморачиваться.
 Когда добавите работу с проводником, удалите эти изображения.*/
-var miniFlash = ["IMG_5763_180x135","IMG_5761_180x240","IMG_5719_180x135",
-				 "IMG_5717_180x240","IMG_5713_180x135", "IMG_5709_180x135"];
-var miniMicro = ["FSCN0612_180x135","FSCN0442_180x135","FSCN0439_180x135",
-				 "FSCN0418_180x135","FSCN0413_180x135"];
-var miniHard = ["FSCN0408_180x135","FSCN0326_180x135","FSCN0167_180x101",
-				"FSCN0118_180x101","FSCN0114_180x135","DSCN2292_180x101",
-				"DSCN2078_180x101","DSCN1926_180x101"];
-var miniCloud = ["DSCN1912_180x101","DSCN1860_180x101", "DSCN1385_180x101",
-				 "DSCN1220_180x101","DSCN1169_180x101"];
-var miniInternet=["DSCN1154_180x101", "DSCN1144_180x101","DSCN0655_180x135",
-			 	  "DSCN1125_180x101"];
+var miniFlash = [];
+var miniMicro = [];
+var miniHard = [];
+var miniCloud = [];
+var miniInternet=[];
 
 /*Функция, загружающая вышеуказанные миниатюры фотографий при нажатии на кнопку 'Загрузить'. 
 Эту функцию придётся полностью поменять при работе с проводником.*/
-function load(elem){
+function load(elem, count){
 	/*В зависимости от отмеченного устройства идёт вставка фотографий с именами, хранящимися в соответствующем массиве.*/
 	switch(elem.parentNode.parentNode.className){
 	case "mainFlash": 
-		for(var i = 0; i < miniFlash.length; i++){
+		for(var i = miniFlash.length-count; i < miniFlash.length; i++){
 			var figure = document.createElement("figure");
 			figure.onclick = showButtons;
-			figure.innerHTML = "<img src='images/kitty/mini/" + miniFlash[i] + ".jpg'>";
+			figure.innerHTML = "<img src='images/kitty/mini/" + miniFlash[i] + "'>";
 			var gallery = elem.parentNode.parentNode.getElementsByClassName('gallery')[0];
 			gallery.appendChild(figure);
 		}
 		break;
 
 	case "mainMicro": 
-		for(var i = 0; i < miniMicro.length; i++){
+		for(var i = miniMicro.length-count; i < miniMicro.length; i++){
 			var figure = document.createElement("figure");
 			figure.onclick = showButtons;
-			figure.innerHTML = "<img src='images/kitty/mini/" + miniMicro[i] + ".jpg'>";
+			figure.innerHTML = "<img src='images/kitty/mini/" + miniMicro[i] + "'>";
 			var gallery = elem.parentNode.parentNode.getElementsByClassName('gallery')[0];
 			gallery.appendChild(figure);
 		}
 		break;
 
 	case "mainHard": 
-		for(var i = 0; i < miniHard.length; i++){
+		for(var i = miniHard.length-count; i < miniHard.length; i++){
 			var figure = document.createElement("figure");
 			figure.onclick = showButtons;
-			figure.innerHTML = "<img src='images/kitty/mini/" + miniHard[i] + ".jpg'>";
+			figure.innerHTML = "<img src='images/kitty/mini/" + miniHard[i] + "'>";
 			var gallery = elem.parentNode.parentNode.getElementsByClassName('gallery')[0];
 			gallery.appendChild(figure);
 		}
 		break;
 
 	case "mainCloud": 
-		for(var i = 0; i < miniCloud.length; i++){
+		for(var i = miniCloud.length-count; i < miniCloud.length; i++){
 			var figure = document.createElement("figure");
 			figure.onclick = showButtons;
-			figure.innerHTML = "<img src='images/kitty/mini/" + miniCloud[i] + ".jpg'>";
+			figure.innerHTML = "<img src='images/kitty/mini/" + miniCloud[i] + "'>";
 			var gallery = elem.parentNode.parentNode.getElementsByClassName('gallery')[0];
 			gallery.appendChild(figure);
 		}
 		break;
 
 	case "mainInternet": 
-		for(var i = 0; i < miniInternet.length; i++){
+		for(var i = miniInternet.length-count; i < miniInternet.length; i++){
 			var figure = document.createElement("figure");
 			figure.onclick = showButtons;
-			figure.innerHTML = "<img src='images/kitty/mini/" + miniInternet[i] + ".jpg'>";
+			figure.innerHTML = "<img src='images/kitty/mini/" + miniInternet[i] + "'>";
 			var gallery = elem.parentNode.parentNode.getElementsByClassName('gallery')[0];
 			gallery.appendChild(figure);
 		}
