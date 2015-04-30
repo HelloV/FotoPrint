@@ -1,0 +1,265 @@
+@import url(style.css);
+
+/*Анимация для .counter*/
+@-webkit-keyframes fadeIn{
+	from{left: 70%;}
+	to{left: 100%;}
+}
+@-moz-keyframes fadeIn{
+	from{left: 70%;}
+	to{left: 100%;}
+}
+@-o-keyframes fadeIn{
+	from{left: 70%;}
+	to{left: 100%;}
+}
+@keyframes fadeIn{
+	from{left: 70%;}
+	to{left: 100%;}
+}
+@-webkit-keyframes fadeOut{
+	from{left: 100%;}
+	to{left: 70%;}
+}
+@-moz-keyframes fadeOut{
+	from{left: 100%;}
+	to{left: 70%;}
+}
+@-o-keyframes fadeOut{
+	from{left: 100%;}
+	to{left: 70%;}
+}
+@keyframes fadeOut{
+	from{left: 100%;}
+	to{left: 70%;}
+}
+.fadeIn{
+	-webkit-animation: fadeIn .75s ease-out forwards;
+	-moz-animation: fadeIn .75s ease-out forwards;
+	-o-animation: fadeIn .75s ease-out forwards;
+	animation: fadeIn .75s ease-out forwards;
+}
+.fadeOut{
+	-webkit-animation: fadeOut .75s ease-in forwards;
+	-moz-animation: fadeOut .75s ease-in forwards;
+	-o-animation: fadeOut .75s ease-in forwards;
+	animation: fadeOut .75s ease-in forwards;
+}
+.finalGallery{
+	width: 95%;
+	height: 600px;
+	overflow: auto;
+	background-color: #EAEAC1;
+	border-radius: 15px;
+	border: 6px ridge #4C2A2A;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,.5);
+	padding: 15px 0 5px 15px;
+	margin: 20px 0 0 20px;
+	text-align: center;
+}
+.image{
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	margin: 0 50px 10px 0;
+	border: 3px solid #4C2A2A;
+	width: 27%;
+}
+.image figure{
+	cursor: pointer;
+}
+.image img{
+	width: 100%;
+}
+.image figcaption{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,255,0,.3) url(../images/okay.png) no-repeat center center;	
+	opacity: 0;
+	-webkit-transition: opacity .75s ease-in-out;
+	-moz-transition: opacity .75s ease-in-out;
+	-o-transition: opacity .75s ease-in-out;
+	transition: opacity .75s ease-in-out;
+}
+.counter{
+	position: absolute;
+	z-index: -1;
+	left: 70%;
+	bottom: -3px;
+	width: 50px;
+	padding: 5px 0;
+	border-radius: 0 5px 5px 0;
+	background-color: #B2EA7D;
+	border: 3px ridge #4C2A2A;
+}
+.counter input{
+	width: 44px;
+	text-align: center;
+	vertical-align: top;
+	padding: 5px;
+	color: #00711B;
+	text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	background-color: #dedede;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.counter .button{
+	padding:0;
+	margin: 0;
+	width: 44px;
+	color: #4C2A2A;
+	font-size: 1.5em;
+	border-left: none;
+	border-right: none;
+	background: linear-gradient(225deg, #FFF, #D8D8D8 30%, #979797);
+	border-radius: 0;
+	box-shadow: none;
+}
+/*Отменили вдавливание для кнопок counter'а*/
+.counter .button:active{
+	transform: translate(0,0);
+}
+.step5, .step6{
+	opacity: 0;
+}
+.buttons .next,
+.buttons .settings{
+	opacity: 0;
+}
+.reset, .settings{
+	margin-right: 180px;
+}
+.settingsWindow, .viewWindow{
+	display: block;
+	z-index: 5;
+	position: absolute;
+	margin: auto;
+	background-color: #555;
+	color: #ccc;
+	border-radius: 15px;
+	border: 6px ridge #4C2A2A;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,.5);
+}
+.settingsWindow{
+	top: 20%;
+	left: 30%;
+	width: 500px;
+}
+.viewWindow{
+	top: 20%;
+	left: 20%;
+	width: 700px;
+}
+.label{
+	vertical-align: top;
+	display: inline-block;
+	font-size: 1.5em;
+	width: 200px;
+	text-align: right;
+	padding-right: 10px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+select{
+	vertical-align: top;
+	width: 200px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #FFD86B;
+	border: none;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor:pointer;
+	box-shadow: 0 0 10px rgba(0,0,0,.75),
+				inset 0 0 10px rgba(255,255,255,.75);
+}
+select:focus{
+	outline: none;
+	border: none;
+}
+input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	cursor:pointer;
+}
+.settingsWindow h2, .viewWindow h2{
+	text-align: center;
+	font-size: 2.5em;
+	font-family: Sansation, sans-serif;
+	text-decoration: underline;
+	text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+	padding: 5px 0 20px 0;
+}
+.buttons .button{
+	width: 150px;
+}
+.settingsWindow .buttons, .viewWindow .buttons{
+	padding: 0 0 20px 0;
+}
+.settingsWindow .button, .viewWindow .button{
+	width: 100px;
+}
+.viewWindow .button{
+	width: 200px;
+	font-size: 2em;
+}
+.groups{
+	height: 550px;
+	overflow: auto;
+	color: #333;
+	margin-bottom: 20px;
+}
+.group{
+	position: relative;
+	margin:20px 30px;
+}
+.group h4{
+	display: inline-block;
+	text-align: center;
+	border-radius: 5px 5px 0 0;
+	width: 250px;
+	background-color: #FFD86B;
+	border: 3px ridge #4C2A2A;
+	border-bottom: none;
+	font-size: 2em;
+	font-family: Sansation, sans-serif;
+	padding: 5px 50px 4px 50px;
+	box-shadow: -6px -3px 5px 0 rgba(0,0,0,.5),
+				6px -3px 5px 0 rgba(0,0,0,.5);
+}
+.group ul{
+	display: block;
+	width: 90%;
+	border-radius: 0 5px 5px 5px;
+	background-color: #FFD86B;
+	border: 3px ridge #4C2A2A;
+	font-size: 1.5em;
+	list-style: none;
+	padding: 5px;
+	box-shadow: 0 0 5px 6px rgba(0,0,0,.5);
+}
+.group span{
+	font-weight: bold;
+}
+.deleteButton{
+	position: absolute;
+	font-size: 2em;
+	top: 3px;
+	left: 215px;
+	width: 35px;
+	height: 35px;
+	display: block;
+	padding: 4px 8px;
+	text-decoration: none;
+	font-family: Arial, sans-serif;
+	border-left: 3px ridge #4C2A2A;
+	color: #4C2A2A;
+	font-weight: bold;
+	text-shadow: 0 2px 2px rgba(0,0,0,.5);
+}
+.deleteButton:hover{
+	color: #FF742F;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>V&amp;K photoprint</title>
+		<meta charset="utf-8">
+		<link href="css/devices_style.css" rel="stylesheet">
+		<script src="scripts/script.js"></script>
+	</head>
+	<body id="devices" onload="loadInfo('devices')">
+		<div class="loginDark">
+			<div class="login">
+				<a href="#" class="close" onclick="popup('dark')">X</a>
+				<form name="login">
+					<h2>Вход в систему</h2>
+					<label for="name" class="label">Логин:</label> 
+					<input type="text" name="name" id="name" maxlength="20">
+					<label for="password" class="label">Пароль:</label> 
+					<input type="password" name="password" id="password" maxlength="20">
+				</form>
+				<div class="buttons">
+					<a href="#" class="button" onclick="done(this);">Войти</a>
+					<a href="#" class="button regButton" onclick="popup('reg')">Регистрация</a>
+				</div>
+			</div>
+			<div class="reg">
+				<a href="#" class="close" onclick="popup('dark')">X</a>
+				<form name="reg">
+					<h2>Регистрация</h2>
+					<label for="regName" class="label">Логин:</label>
+					<input type="text" name="name" id="regName" maxlength="20">
+					<label for="regPassword" class="label">Пароль:</label>
+					<input type="password" name="password" id="regPassword" maxlength="20">
+					<label for="email" class="label">Почта:</label>
+					<input type="email" name="email" id="email" maxlength="20">
+					<label for="fio" class="label">ФИО:</label>
+					<input type="text" name="fio" id="fio">
+					<span class="label">Пол:</span>
+					<label>Мужской<input type="radio" name="sex" value="male" checked></label>
+					<label>Женский<input type="radio" name="sex" value="female"></label>
+				</form>
+				<div class="buttons">
+					<a href="#" class="button" onclick="done(this)" >Ок</a>
+					<a href="#" class="button" onclick="popup('reg')" title="Дурак">Я передумал</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="imageDark">
+				<div class="show">
+					<a href="#" class="close" onclick="closeImage()">X</a>
+					<img src="">
+				</div>
+			</div>
+			<header>
+				<img src="images/logo.png" class="logo">
+				<h1>PhotoPrint</h1>		
+				<p class="hello">Вы ещё не готовы.</p>
+				<a href="#" class="button enter" onclick="popup('dark')">Войти</a>
+				<a href="#" class="button exit" onclick="exit()">Выйти</a>
+				<p class="slogan">Фотопечать на скорую руку! Работаем по ночам!</p>	
+			</header>
+			<div class="content">
+				<a href="#" class="button refresh" onclick="refreshDevices()"></a>
+				<h3>Шаг 1. Выберите требуемый источник</h3>
+				<div class="preview">
+					<article class="flash" onclick="check(this)">
+						<h2>Флеш-диск</h2>
+						<figure>
+							<img src="images/flash.png">
+							<figcaption></figcaption>
+						</figure>
+					</article>
+					<article class="micro" onclick="check(this)">
+						<h2>Карта памяти</h2>
+						<figure>
+							<img src="images/microSD.png">
+							<figcaption></figcaption>
+						</figure>
+					</article>
+					<article class="hard" onclick="check(this)">
+						<h2>Жёсткий диск</h2>
+						<figure>
+							<img src="images/hard.png">
+							<figcaption></figcaption>
+						</figure>
+					</article>
+					<article class="cloud" onclick="check(this)">
+						<h2>Облако</h2>
+						<figure>
+							<img src="images/cloud.png">
+							<figcaption></figcaption>
+						</figure>
+					</article>
+					<article class="internet" onclick="check(this)">
+						<h2>Интернет</h2>
+						<figure>
+							<img src="images/internet.png">
+							<figcaption></figcaption>
+						</figure>
+					</article>
+				</div>
+				<div class="mainInfo">
+					<h3 class="step2"></h3>
+					<div class="mainFlash">
+						<div class="buttons">
+							<a href="#" class="button dop" onclick="showImage()">Просмотреть</a> 
+							<a href="#" class="button dop" onclick="deleteImage()">Удалить</a> 
+							<a href="#" class="button" onclick="load(this)">Загрузить</a> 
+						</div>
+						<div class="gallery"></div>
+					</div>
+					<div class="mainMicro">
+						<div class="buttons">
+							<a href="#" class="button dop" onclick="showImage()">Просмотреть</a> 
+							<a href="#" class="button dop" onclick="deleteImage()">Удалить</a> 
+							<a href="#" class="button" onclick="load(this)">Загрузить</a> 
+						</div>
+						<div class="gallery"></div>
+					</div>
+					<div class="mainHard">
+						<div class="buttons">
+							<a href="#" class="button dop" onclick="showImage()">Просмотреть</a> 
+							<a href="#" class="button dop" onclick="deleteImage()">Удалить</a> 
+							<a href="#" class="button" onclick="load(this)">Загрузить</a> 
+						</div>
+						<div class="gallery"></div>
+					</div>
+					<div class="mainCloud">
+						<div class="buttons">
+							<a href="#" class="button dop" onclick="showImage()">Просмотреть</a> 
+							<a href="#" class="button dop" onclick="deleteImage()">Удалить</a> 
+							<a href="#" class="button" onclick="load(this)">Загрузить</a> 
+						</div>
+						<div class="gallery"></div>
+					</div>
+					<div class="mainInternet">
+						<div class="buttons">
+							<a href="#" class="button dop" onclick="showImage()">Просмотреть</a> 
+							<a href="#" class="button dop" onclick="deleteImage()">Удалить</a> 
+							<a href="#" class="button" onclick="load(this)">Загрузить</a> 
+						</div>
+						<div class="gallery"></div>
+					</div>
+				</div>
+				<h3 class="step3">Шаг 3. Выберите новый источник, либо нажмите "Далее"</h3>
+				<div class="buttons">
+					<a class="button prev" href="main.html" title="На главную страницу">Назад</a>
+					<a class="button next" href="gallery.html" title="К настройкам">Далее</a>
+				</div>
+			</div>
+			<footer>
+				<p class="copyright">&copy;2015 Vadyan &amp; Korshun Company.</p>
+				<p>Все права защищены. Любое копирование без получения согласия компании карается Вадяном.</p> 
+			</footer>
+		</div>
+	</body>
+</html>

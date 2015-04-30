@@ -1,0 +1,124 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>V&amp;K photoprint</title>
+		<meta charset="utf-8">
+		<link href="css/main_style.css" rel="stylesheet">
+		<script src="scripts/script.js"></script>
+	</head>
+	<body id="main" onload="loadInfo('main')">
+		<div class="loginDark">
+			<div class="login">
+				<a href="#" class="close" onclick="popup('dark')">X</a>
+				<form name="login">
+					<h2>Вход в систему</h2>
+					<label for="name" class="label">Логин:</label> 
+					<input type="text" name="name" id="name" maxlength="20">
+					<label for="password" class="label">Пароль:</label> 
+					<input type="password" name="password" id="password" maxlength="20">
+				</form>
+				<div class="buttons">
+					<a href="#" class="button" onclick="done(this);">Войти</a>
+					<a href="#" class="button regButton" onclick="popup('reg')">Регистрация</a>
+				</div>
+			</div>
+			<div class="reg">
+				<a href="#" class="close" onclick="popup('dark')">X</a>
+				<form name="reg">
+					<h2>Регистрация</h2>
+					<label for="regName" class="label">Логин:</label>
+					<input type="text" name="name" id="regName" maxlength="20">
+					<label for="regPassword" class="label">Пароль:</label>
+					<input type="password" name="password" id="regPassword" maxlength="20">
+					<label for="email" class="label">Почта:</label>
+					<input type="email" name="email" id="email" maxlength="20">
+					<label for="fio" class="label">ФИО:</label>
+					<input type="text" name="fio" id="fio">
+					<span class="label">Пол:</span>
+					<label>Мужской<input type="radio" name="sex" value="male" checked></label>
+					<label>Женский<input type="radio" name="sex" value="female"></label>
+				</form>
+				<div class="buttons">
+					<a href="#" class="button" onclick="done(this)" >Ок</a>
+					<a href="#" class="button" onclick="popup('reg')" title="Дурак">Я передумал</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<header>
+				<img src="images/logo.png" class="logo">
+				<h1>PhotoPrint</h1>		
+				<p class="hello">Вы ещё не готовы.</p>
+				<a href="#" class="button enter" onclick="popup('dark')">Войти</a>
+				<a href="#" class="button exit" onclick="exit()">Выйти</a>
+				<p class="slogan">Фотопечать на скорую руку! Работаем по ночам!</p>
+			</header>
+			<div class="content">
+				<div class="top">
+					<img class="photo1" src="images/photos.png">
+					<p>Приветствуем Вас в нашей студии фотопечати "V&amp;K PhotoPrint". У нас вы можете распечатать свои фотографии
+					и фотографии своих родных и близких за считанные минуты. Мы поддерживаем различные виды устройств, на которых Вы 
+					храните свои фотографии. Распечатка производится во всех возможных форматах, на разных типах бумаги, доступны 
+					различные виды оплаты - вы можете выбрать всё то, что подходит именно Вам. Вы также можете выбрать экспресс-распечатку, 
+					чтобы получить свои желанные фотографии ещё быстрее, чем обычно. В нашей компании мы делаем всё, чтобы Вам было
+					приятно и удобно делать свои покупки.</p> 
+				</div>
+				<div class="preview">
+					<article class="devices">
+						<h2>Виды устройств</h2>
+						<figure>
+							<img src="images/devices.png">
+							<figcaption>
+								<ul>
+									<li>Флеш-диски</li>
+									<li>Карты памяти</li>
+									<li>Жёсткие диски</li>
+									<li>Облако</li>
+									<li>Интернет-ресурсы</li>
+								</ul>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="paper">
+						<h2>Виды фотобумаги</h2>
+						<figure>
+							<img src="images/paper.png">
+							<figcaption>
+								<ul>
+									<li>Глянцевая</li>
+									<li>Матовая</li>
+									<li>Полуглянцевая</li>
+									<li>Суперглянцевая</li>
+									<li>Сатин</li>
+								</ul>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="sizes">
+						<h2>Виды форматов</h2>
+						<figure>
+							<img src="images/size.png">
+							<figcaption>
+								<ul>
+									<li>10x10</li>
+									<li>10x15</li>
+									<li>15x15</li>
+									<li>20x30</li>
+									<li>40x50</li>
+									<li>50x75</li>
+								</ul>
+							</figcaption>
+						</figure>
+					</article>
+				</div>
+				<div class="buttons">
+					<a class="button" href="devices.html" title="Перейти к работе" onclick="clearInfo();clearGalleryInfo()">Начать</a>
+				</div>
+			</div>
+			<footer>
+				<p class="copyright">&copy;2015 Vadyan &amp; Korshun Company.</p>
+				<p>Все права защищены. Любое копирование без получения согласия компании карается Вадяном.</p> 
+			</footer>
+		</div>
+	</body>
+</html>

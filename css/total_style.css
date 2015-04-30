@@ -1,0 +1,52 @@
+@import url(style.css);
+.blank h2{
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.7em;
+	text-decoration: underline;
+	letter-spacing: 1px;
+}
+.cost{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: inline-block;
+	text-align: right;
+	padding: 5px 20px 20px 0;
+	border-top: 3px solid #FF742F;
+}
+.cost span{
+	font-weight: bold;
+}
+.blank{
+	padding: 10px 20px 60px 20px;
+	width: 90%;
+	margin: 20px auto;
+	min-height: 600px;
+	position: relative;
+	color: #333;
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.1);
+	/*Эти две строчки я скатал xD*/
+	background: linear-gradient(0% 20%, 0% 1000%, from(#fff), to(#fff), color-stop(.1,#f3f3f3));
+	border-bottom-right-radius: 6px 50px;
+}
+.group{
+	padding: 10px 0;
+}
+.group h4{	
+	font-size: 1.5em;
+}
+.group ul{
+	border-bottom: 3px solid #333;
+	font-size: 1em;
+	list-style: none;
+	padding: 10px 0 20px 40px;
+}
+.group span{
+	font-weight: bold;
+}
+.deleteButton{
+	display: none;
+}
